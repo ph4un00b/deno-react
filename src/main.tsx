@@ -1,17 +1,19 @@
-import React from "https://esm.sh/react@18";
-import ReactDOM from "https://esm.sh/react-dom@18/client";
+import React from "https://esm.sh/react@17";
+import ReactDOM from "https://esm.sh/react-dom@17";
 import App from "./components/App.tsx";
 import { BrowserRouter } from "https://esm.sh/react-router-dom@6";
 
-/* document was configured with proper deno.json */
-/* https://deno.land/manual/typescript/configuration#using-the-lib-property */
+/* bundling */
+/* https://lume.land/plugins/bundler/#typescript-for-the-browser */
+/// <reference lib="dom" />
 
-const root = document.getElementById("root");
-
-ReactDOM.createRoot(root!).render(
+ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
+  /* document was configured with proper deno.json */
+  /* https://deno.land/manual/typescript/configuration#using-the-lib-property */
+  document.getElementById("root")!,
 );

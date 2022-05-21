@@ -1,4 +1,4 @@
-import React from "https://esm.sh/react@18";
+import React from "https://esm.sh/react@17";
 import { Link } from "https://esm.sh/react-router-dom@6";
 
 function App() {
