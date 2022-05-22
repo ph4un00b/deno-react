@@ -1,3 +1,13 @@
+export function getInvoices() {
+  return invoices;
+}
+
+export function getInvoice(number: number) {
+  return invoices.find(
+    (invoice) => invoice.number === number,
+  );
+}
+
 const invoices = [
   {
     name: "Santa Monica",
@@ -30,7 +40,3 @@ const invoices = [
     due: "01/27/1998",
   },
 ];
-
-export function getInvoices() {
-  return invoices;
-}
