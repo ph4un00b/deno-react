@@ -1,10 +1,7 @@
 import React from "https://esm.sh/react@18";
-import {
-  NavLink,
-  Outlet,
-  useSearchParams,
-} from "https://esm.sh/react-router-dom@6";
+import { Outlet, useSearchParams } from "https://esm.sh/react-router-dom@6";
 import { getInvoices } from "../data.ts";
+import { QueryNavLink } from "../components/molecules/QueryNavLink.tsx";
 
 export default function Invoices() {
   const invoices = getInvoices();
@@ -40,7 +37,7 @@ export default function Invoices() {
             return name.startsWith(filter.toLowerCase());
           })
           .map((invoice) => (
-            <NavLink
+            <QueryNavLink
               style={({ isActive }) => {
                 return {
                   display: "block",
@@ -53,7 +50,7 @@ export default function Invoices() {
               key={invoice.number}
             >
               {invoice.name}
-            </NavLink>
+            </QueryNavLink>
           ))}
       </nav>
 
