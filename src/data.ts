@@ -8,7 +8,13 @@ export function getInvoice(number: number) {
   );
 }
 
-const invoices = [
+export function deleteInvoice(number: number) {
+  invoices = invoices.filter(
+    (invoice) => invoice.number !== number,
+  );
+}
+
+let invoices = [
   {
     name: "Santa Monica",
     number: 1995,

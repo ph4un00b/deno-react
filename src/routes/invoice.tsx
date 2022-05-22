@@ -1,8 +1,14 @@
 import React from "https://esm.sh/react@18";
-import { useParams } from "https://esm.sh/react-router-dom@6";
-import { getInvoice } from "../data.ts";
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+} from "https://esm.sh/react-router-dom@6";
+import { deleteInvoice, getInvoice } from "../data.ts";
 
 export default function Invoice() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const params = useParams();
   const invoice = getInvoice(Number(params.invoiceId));
 
@@ -17,6 +23,17 @@ export default function Invoice() {
       </p>
 
       <p>Due Date: {invoice.due}</p>
+
+      <p>
+        <button
+          onClick={() => {
+            deleteInvoice(invoice.number);
+            navigate("/invoices" + location.search);
+          }}
+        >
+          Delete
+        </button>
+      </p>
     </main>
   );
 }
