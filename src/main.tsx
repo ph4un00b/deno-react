@@ -8,6 +8,7 @@ import {
 } from "https://esm.sh/react-router-dom@6";
 import Expenses from "./routes/expenses.tsx";
 import Invoices from "./routes/invoices.tsx";
+import Invoice from "./routes/invoice.tsx";
 
 /* document was configured with proper deno.json */
 /* https://deno.land/manual/typescript/configuration#using-the-lib-property */
@@ -20,7 +21,19 @@ ReactDOM.createRoot(root!).render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="expenses" element={<Expenses />} />
-          <Route path="invoices" element={<Invoices />} />
+
+          <Route path="invoices" element={<Invoices />}>
+            <Route path=":invoiceId" element={<Invoice />} />
+          </Route>
+
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>404: There's nothing here!</p>
+              </main>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
