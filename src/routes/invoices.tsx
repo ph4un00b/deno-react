@@ -1,5 +1,5 @@
 import React from "https://esm.sh/react@18";
-import { Link, Outlet } from "https://esm.sh/react-router-dom@6";
+import { NavLink, Outlet } from "https://esm.sh/react-router-dom@6";
 import { getInvoices } from "../data.ts";
 
 export default function Invoices() {
@@ -14,13 +14,20 @@ export default function Invoices() {
         }}
       >
         {invoices.map((invoice) => (
-          <Link
-            style={{ display: "block", margin: "1rem 0" }}
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                display: "block",
+                margin: "1rem 0",
+                backgroundColor: isActive ? "yellowgreen" : "",
+                color: isActive ? "brown" : "",
+              };
+            }}
             to={`/invoices/${invoice.number}`}
             key={invoice.number}
           >
             {invoice.name}
-          </Link>
+          </NavLink>
         ))}
       </nav>
 
