@@ -8,5 +8,6 @@ site.use(esbuild({
 }));
 
 site.copy("index.html");
+site.ignore("README.md")
 
 export default site;
