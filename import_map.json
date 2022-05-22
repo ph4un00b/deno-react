@@ -1,5 +1,8 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v1.9.0/"
+    "lume/": "https://deno.land/x/lume@v1.9.0/",
+    "react": "https://esm.sh/react@18",
+    "react-dom/": "https://esm.sh/react-dom@18/",
+    "react-router": "https://esm.sh/react-router-dom@6"
   }
 }

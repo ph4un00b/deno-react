@@ -1,3 +1,3 @@
-$ deno task build
-$ deno task dev
+- $ deno task build
+- $ deno task dev
 

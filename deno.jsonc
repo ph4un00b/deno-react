@@ -2,8 +2,7 @@
   "importMap": "import_map.json",
   "tasks": {
     "build": "deno run -A https://deno.land/x/lume@v1.9.0/ci.ts",
-    // "serve": "deno task build --serve",
-    "dev": "lume --serve"
+    "dev": "deno run -A https://deno.land/x/lume@v1.9.0/ci.ts --serve"
   },
   "compilerOptions": {
     "jsx": "react-native",
